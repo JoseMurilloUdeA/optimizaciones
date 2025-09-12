@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Aleatoria - Optimización Multidimensional</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <button class="regresar" onclick="location.href='../index.html'">Regresar</button>
+
+    <h1>Búsqueda Aleatoria - Optimización Multidimensional</h1>
+
+    <div>
+        <h2>Parámetros de Entrada</h2>
+        <label>Función f(x,y): </label>
+        <input type="text" id="funcion" value="y - x - 2*x*x - 2*x*y - y*y"
+            placeholder="Ejemplo: y - x - 2*x*x - 2*x*y - y*y">
+        <br><br>
+
+        <label>Rango de x - Límite inferior (xl): </label>
+        <input type="number" id="xl" value="-2" step="0.1">
+        <br><br>
+
+        <label>Rango de x - Límite superior (xu): </label>
+        <input type="number" id="xu" value="2" step="0.1">
+        <br><br>
+
+        <label>Rango de y - Límite inferior (yl): </label>
+        <input type="number" id="yl" value="1" step="0.1">
+        <br><br>
+
+        <label>Rango de y - Límite superior (yu): </label>
+        <input type="number" id="yu" value="3" step="0.1">
+        <br><br>
+
+        <label>Número de iteraciones: </label>
+        <input type="number" id="iteraciones" value="1000" min="10">
+        <br><br>
+
+        <label>Tipo de búsqueda: </label>
+        <select id="tipoOptimizacion">
+            <option value="max">Máximo</option>
+            <option value="min">Mínimo</option>
+        </select>
+        <br><br>
+
+        <button onclick="ejecutarBusquedaAleatoria()">Ejecutar Búsqueda Aleatoria</button>
+        <button onclick="limpiarResultados()">Limpiar</button>
+    </div>
+
+    <div id="resultados" style="display: none;">
+        <h2>Resultados</h2>
+        <div id="resumen"></div>
+
+        <h3>Tabla de Iteraciones (Últimas 20)</h3>
+        <div id="tabla-container">
+            <table id="tabla" border="1">
+                <thead>
+                    <tr>
+                        <th>i</th>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>f(x,y)</th>
+                        <th>Mejor f hasta ahora</th>
+                        <th>Error relativo (%)</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Gráfica de la Función</h3>
+        <div id="grafica-funcion"></div>
+
+        <h3>Gráfica de Convergencia</h3>
+        <div id="grafica-error"></div>
+    </div>
+
+    <script src="busqueda_aleatoria.js"></script>
+</body>
+
+</html>

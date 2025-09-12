@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="location.href='biseccion/biseccion.html'">Bisección</button>
+    <button onclick="location.href='falsa_posicion/falsa_posicion.html'">Falsa posición</button>
+    <button onclick="location.href='dorada/dorada.html'">Razón Dorada</button>
+    <button onclick="location.href='interpolacion_cuadratica/interpolacion_cuadratica.html'">Interpolación
+        Cuadratica</button>
+    <button onclick="location.href='newton/newton.html'">Newton</button>
+    <button onclick="location.href='raphson/raphson.html'">Newton Raphson</button>
+    <button onclick="location.href='busqueda_aleatoria/busqueda_aleatoria.html'">Búsqueda aleatoria</button>
+</body>
+
+</html>

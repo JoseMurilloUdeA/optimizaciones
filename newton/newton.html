@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Método de Newton (Optimización)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 18px;
+        }
+
+        label {
+            display: block;
+            margin-top: 8px;
+        }
+
+        input,
+        select {
+            padding: 6px;
+            margin-top: 4px;
+            width: 220px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+            width: 100%
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 5px;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="regresar" onclick="location.href='../index.html'">Regresar</button>
+
+    <h2>Método de Newton — Optimización</h2>
+
+    <label>Función f(x):</label>
+    <input id="func" value="2*sin(x) - x^2/10">
+
+    <label>Valor inicial x₀:</label>
+    <input id="x0" type="number" value="2">
+
+    <label>Tolerancia:</label>
+    <input id="tol" type="number" step="any" value="0.0001">
+
+    <label>Máx. iteraciones:</label>
+    <input id="maxIter" type="number" value="20">
+
+    <label>Buscar:</label>
+    <select id="modo">
+        <option value="max">Máximo</option>
+        <option value="min">Mínimo</option>
+    </select>
+
+    <button onclick="runNewton()">Calcular</button>
+
+    <h3>Tabla de iteraciones</h3>
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th>Iter</th>
+                <th>xᵢ</th>
+                <th>f'(xᵢ)</th>
+                <th>f''(xᵢ)</th>
+                <th>xᵢ₊₁</th>
+                <th>Error |xᵢ₊₁-xᵢ|</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Gráfica f(x)</h3>
+    <div id="graficaFuncion" style="height:400px"></div>
+
+    <h3>Gráfica del error</h3>
+    <div id="graficaError" style="height:300px"></div>
+
+    <script src="newton.js"></script>
+</body>
+
+</html>

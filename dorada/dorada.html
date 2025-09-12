@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Método de la Razón Dorada</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <button class="regresar" onclick="location.href='../index.html'">Regresar</button>
+
+    <h2>Método de la Razón Dorada</h2>
+
+    <label>Función f(x): </label>
+    <input type="text" id="funcion" value="2*sin(x) - x^2/10"><br><br>
+
+    <label>Límite inferior (xl): </label>
+    <input type="number" id="xl" value="-2"><br><br>
+
+    <label>Límite superior (xu): </label>
+    <input type="number" id="xu" value="5"><br><br>
+
+    <label>Tolerancia: </label>
+    <input type="number" step="any" id="tol" value="0.01"><br><br>
+
+    <label>Buscar: </label>
+    <select id="modo">
+        <option value="max">Máximo</option>
+        <option value="min">Mínimo</option>
+    </select><br><br>
+
+    <button onclick="ejecutarRazonDorada()">Calcular</button>
+
+    <h3>Tabla de Iteraciones</h3>
+    <table border="1" id="tabla">
+        <thead>
+            <tr>
+                <th>Iteración</th>
+                <th>xl</th>
+                <th>xu</th>
+                <th>x1</th>
+                <th>x2</th>
+                <th>f(x1)</th>
+                <th>f(x2)</th>
+                <th>Intervalo</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Gráfica de la Función</h3>
+    <div id="graficaFuncion" style="width:100%;height:400px;"></div>
+
+    <h3>Convergencia del Intervalo (Error)</h3>
+    <div id="graficaError" style="width:100%;height:400px;"></div>
+
+    <script src="dorada.js"></script>
+</body>
+
+</html>
